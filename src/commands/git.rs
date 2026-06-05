@@ -6,17 +6,20 @@ pub fn run(_args: &[String]){
 
     println!("Commit changes:"); 
 
-    io::stdin().read_line(&mut comment);
+    io::stdin().read_line(&mut comment).unwrap();
 
     Command::new("git")
         .args(["add", "."])
-        .status();
+        .status()
+        .unwrap();
 
     Command::new("git")
         .args(["commit", "-m", comment.trim()])
-        .status();
+        .status()
+        .unwrap();
 
     Command::new("git")
         .arg("push")
-        .status();
+        .status()
+        .unwrap();
 }
