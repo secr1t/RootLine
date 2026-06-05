@@ -6,11 +6,9 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     if args.len() < 2 {
-        println!("Usage: rl <command>");
+        println!("Usage: rl <command> [subcommand] [args...]");
         return;
     }
 
-    let command = &args[1];
-
-    commands::run(command);
+    commands::run(&args[1..]);
 }

@@ -1,7 +1,7 @@
 use std::io;
 use std::process::Command;
 
-pub fn run(){
+pub fn run(_args: &[String]){
     let mut comment = String::new();
 
     println!("Commit changes:"); 
