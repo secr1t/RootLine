@@ -13,10 +13,10 @@ pub fn run(args: &[String]) {
 fn push(){
     let mut input = String::new();
 
-    print!("Commit changes: ");
-
     io::stdin().read_line(&mut input).unwrap();
 
+    print!("Commit changes: "); 
+    
     let comment = match input.trim() {
         "" => "Update project",
         c => c,
