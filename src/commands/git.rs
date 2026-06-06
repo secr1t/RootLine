@@ -1,7 +1,17 @@
 use std::io;
 use std::process::Command;
 
-pub fn run(_args: &[String]){
+pub fn run(args: &[String]) {
+    let ext = &args[0];
+
+    match ext.as_str(){
+        "push" => push(),
+         _ => println!("Unknown command: {}", ext),
+
+    }
+}
+
+fn push(){
     let mut comment = String::new();
 
     println!("Commit changes:"); 
@@ -22,9 +32,4 @@ pub fn run(_args: &[String]){
         .arg("push")
         .status()
         .unwrap();
-}
-
-fn push(){
-
-    
 }
