@@ -23,6 +23,7 @@ fn push(){
     };
 
    
+    //Commit
     
 
     Command::new("git")
