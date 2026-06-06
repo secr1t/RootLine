@@ -14,7 +14,7 @@ pub fn run(args: &[String]) {
 fn push(){
     let mut comment = String::new();
 
-    print!("Commit changes:"); 
+    print!("Commit changes"); 
 
     io::stdin().read_line(&mut comment).unwrap();
 
