@@ -14,9 +14,11 @@ pub fn run(args: &[String]) {
 fn push(){
     let mut comment = String::new();
 
-    println!("Commit changes:"); 
+    print!("Commit changes:"); 
 
     io::stdin().read_line(&mut comment).unwrap();
+
+
 
     Command::new("git")
         .args(["add", "."])
@@ -32,4 +34,5 @@ fn push(){
         .arg("push")
         .status()
         .unwrap();
+    
 }
