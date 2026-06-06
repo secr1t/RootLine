@@ -1,4 +1,4 @@
-use std::io;
+use std::io::{self, Write};
 use std::process::Command;
 
 pub fn run(args: &[String]) {
@@ -14,7 +14,8 @@ pub fn run(args: &[String]) {
 fn push(){
     let mut comment = String::new();
 
-    print!("Commit changes"); 
+    print!("Commit changes: "); 
+    io::stdout().flush().unwrap();
 
     io::stdin().read_line(&mut comment).unwrap();
 
