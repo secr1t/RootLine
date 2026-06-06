@@ -10,16 +10,20 @@ pub fn run(args: &[String]) {
 
     }
 }
-// Comment
 fn push(){
-    let mut comment = String::new();
+    let mut input = String::new();
 
-    print!("Commit changes: "); 
-    io::stdout().flush().unwrap();
+    print!("Commit changes: ");
 
-    io::stdin().read_line(&mut comment).unwrap();
+    io::stdin().read_line(&mut input).unwrap();
 
+    let comment = match input.trim() {
+        "" => "Update project",
+        c => c,
+    };
 
+   
+    
 
     Command::new("git")
         .args(["add", "."])
