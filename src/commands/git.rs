@@ -12,10 +12,10 @@ pub fn run(args: &[String]) {
 }
 fn push(){
 
-    let mut input = String::new();
-   
-    print!("Commit changes: ");  
+    print!("Commit message: ");
+    io::stdout().flush().unwrap();
 
+    let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
 
     let comment = match input.trim() {
