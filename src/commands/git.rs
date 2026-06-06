@@ -12,14 +12,17 @@ pub fn run(args: &[String]) {
 }
 fn push(){
 
-    print!("Commit message: ");
+    print!("Commit message. In case if comment would be empty would be used default preset: ");
     io::stdout().flush().unwrap();
 
     let mut input = String::new();
     io::stdin().read_line(&mut input).unwrap();
 
     let comment = match input.trim() {
-        "" => "Update project",
+        "" => {
+            println!("Empty commit usage. Using default preset");
+            "Update project"
+            }
         c => c,
     };
    
