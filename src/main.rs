@@ -13,4 +13,3 @@ fn main() {
     commands::run(&args[1..]);
 }
 
-// Useless comment

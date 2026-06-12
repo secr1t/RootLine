@@ -11,9 +11,7 @@ pub fn run(args: &[String]) {
     }
 }
 
-// Commit
-//
-//
+
 fn push(){
 
     print!("Commit message. In case if comment would be empty would be used default preset: ");

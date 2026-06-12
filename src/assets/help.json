@@ -1,0 +1,17 @@
+{
+  "usage": "Text",
+  "description": "description",
+
+  "commands": {
+
+    "git": {
+      "usage": "git [arg1]",
+      "description": "Desc for git",
+
+      "args": {
+        "push": "Add",
+        "new": "Create"
+      }
+    }
+  }
+}
