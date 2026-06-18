@@ -1,0 +1,23 @@
+{
+  "common": "Text",
+  "description": "Some description",
+
+  "commands": {
+
+    "git": {
+      "usage": "git [arg1]",
+      "comment": "Desc for git",
+
+      "args": {
+        "push": "Add",
+        "new": "Create"
+      }
+    },
+
+    "ip": {
+
+      "usage": "ip",
+      "comment": "Shows Local and Private IP"
+    }
+  }
+}

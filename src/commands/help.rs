@@ -1,38 +1,18 @@
-use serde::Deserialize;
-use std::fs;
+use crate::core::assets::parser;
 
-#[derive(Deserialize)]
-struct Help {
-    usage: String,
-    description: String,
-}
+pub fn run(args: &[String]) {
+    let data = parser();
 
-pub fn run(args: &[String]){
-
-   reader();
- 
-
-
-}
-
-fn reader() {
-    let text = match fs::read_to_string("src/assets/help.json") {
-        Ok(text) => text,
-        Err(err) => {
-            println!("Failed to open help.json: {}", err);
+    let ext = match args.get(0) {
+        Some(v) => v,
+        None => {
+            println!("{}", data.description);
             return;
         }
     };
 
-    let help: Help = match serde_json::from_str(&text) {
-        Ok(data) => data,
-        Err(err) => {
-            println!("Invalid JSON: {}", err);
-            return;
-        }
-    };
-
-    println!("Usage: {}", help.usage);
-    println!("Description: {}", help.description);
-
+    match ext.as_str() {
+        "git" => println!("{}", data.description),
+        _ => println!("Unknown command: {}", ext),
+    }
 }
