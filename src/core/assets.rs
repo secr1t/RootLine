@@ -8,7 +8,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct HelpData{
-   pub usage: String,
+   pub common: String,
    pub description: String,
 
    pub commands: HashMap<String, Commands>,
@@ -17,10 +17,10 @@ pub struct HelpData{
 
 #[derive(Deserialize)]
 pub struct Commands{
-    usage: String,
-    comment: String,
+    pub usage: String,
+    pub  description: String,
 
-    args: Option<HashMap<String, String>>,
+    pub args: Option<HashMap<String, String>>,
 }
 
 pub fn parser() -> HelpData{

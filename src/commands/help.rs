@@ -1,18 +1,17 @@
-use crate::core::assets::parser;
+use crate::{commands, core::assets::parser};
 
 pub fn run(args: &[String]) {
     let data = parser();
 
-    let ext = match args.get(0) {
-        Some(v) => v,
-        None => {
-            println!("{}", data.description);
-            return;
+    match args.len() {
+        0 => { println!("{}", data.description); }
+        1 => {
+            let command = &args[0];
+            match data.commands.get(command){
+                Some(cmd) => { println!("{}", cmd.description); }
+                None => { println!("Unknown"); }
+            }
         }
-    };
-
-    match ext.as_str() {
-        "git" => println!("{}", data.description),
-        _ => println!("Unknown command: {}", ext),
+        _ => { println!("Too many arguments"); }
     }
 }

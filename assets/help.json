@@ -6,7 +6,7 @@
 
     "git": {
       "usage": "git [arg1]",
-      "comment": "Desc for git",
+      "description": "Desc for git",
 
       "args": {
         "push": "Add",
@@ -17,7 +17,7 @@
     "ip": {
 
       "usage": "ip",
-      "comment": "Shows Local and Private IP"
+      "description": "Shows Local and Private IP"
     }
   }
 }
